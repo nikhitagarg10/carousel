@@ -1,0 +1,27 @@
+<div class="wrapper">
+    <app-card 
+        [images] ="images"
+        [autoSlide]="isAutoSlide"
+        [slideInterval]="timerInterval"
+    >
+    </app-card>
+    <button
+        (click)="toggleAutoSlide()"
+    >
+    {{ isAutoSlide ? 'Stop' : 'Start'}} Autoslide
+    </button>
+    <form class="interval-form" [formGroup]="intervalForm">
+        <input 
+            type="number" 
+            placeholder="(in ms)" 
+            id="slide-interval" 
+            formControlName="time">
+        <button 
+            type="submit"
+            class="interval-btn"
+            (click)="setSliderInterval()"
+        >
+            set
+        </button>
+    </form>
+</div>
